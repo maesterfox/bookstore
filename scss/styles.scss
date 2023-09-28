@@ -1,7 +1,7 @@
 // Variables
 $primary-bg: #05051d;
 $primary-color: white;
-$secondary-bg: #9c83c0;
+$secondary-bg: #2c213b;
 $tert: rgb(255, 88, 213);
 $font-family: 'Poppins', sans-serif;
 $border-radius: 8px;
@@ -39,21 +39,30 @@ body {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Added shadow
 }
 
-// Table Styles
+// Existing Table Styles
 .resultsTable,
 .apiDataTable {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse;  // This ensures the borders collapse into a single border
   margin-top: 30px;
-  font-size: 14px;
-  text-align: center;
-
+  font-size: 18px;
+  text-align: center;  // This will center the content in each cell
+  border-radius: 12px;
+  
+  // Add these to style your table, rows, and columns
+  border: 1px solid $primary-color;
+  th, td {
+    border: 1px solid $primary-color;  // This adds borders around your table cells
+    padding: 8px;  // Adds some padding inside each cell
+    text-align: center;  // Centers the content inside each cell
+  }
+  
   th {
     background-color: $secondary-bg;
     color: $primary-color;
-    padding: 8px;
   }
 }
+
 
 // Main Container
 .main {
@@ -254,5 +263,71 @@ body {
   .modal-body {
     overflow: auto;
     max-height: 400px; // Adjust the maximum height as needed
+  }
+  
+
+// Existing SCSS code
+
+@media screen and (max-width: 1200px) {
+    .main {
+      max-width: 95%;
+      margin: 5% 0 auto;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .main {
+      padding: 20px;
+    }
+  
+    .flexcontainer {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .resultsTable,
+    .apiDataTable {
+      font-size: 10px;
+    }
+  
+    .form-container {
+      input,
+      select,
+      button {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+    }
+  
+    // Add this for scrollable table
+    .table-container {
+      overflow-x: auto;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .main {
+      margin: 3% 0 auto;
+    }
+  
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .resultsTable th,
+    .apiDataTable th,
+    .resultsTable td,
+    .apiDataTable td {
+      font-size: 10px; // or adjust as needed
+    }
+  
+    .resultsTable th:nth-child(n+3), // Hide all columns except the first two
+    .resultsTable td:nth-child(n+3),
+    .apiDataTable th:nth-child(n+3),
+    .apiDataTable td:nth-child(n+3) {
+      display: none;
+    }
   }
   
