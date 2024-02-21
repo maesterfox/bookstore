@@ -1,232 +1,150 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,700&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif; }
+Detailed Report on Functionality and Implementation
+Sections & Features Implemented
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #05051d;
-  color: white; }
+Class to handle AJAX calls: A class dedicated to handling AJAX calls.
+Weather-related API calls: Fetches weather data and populates a modal with it.
+WikipediaAPI Class: Fetches basic Geonames information and Wikipedia history.
+GeoNamesAPI Class: Likely handles calls to the GeoNames API.
+MapHandler Class: A comprehensive class dealing with various aspects of the Leaflet map.
+Airports Layer: Functionality to toggle airports layer on or off.
+Train Stations Layer: Functionality to toggle train stations layer on or off.
+Country Border: Fetches and displays country borders.
+User's Location: Fetches and sets the user's location on the map.
+Country Information Modal: Populates a modal with country information.
+Currency Conversion: Provides an EasyButton for currency conversion and populates currency dropdowns.
+Techniques Used
+AJAX: Extensive use of AJAX for API calls.
+Promises: Uses promises for asynchronous operations.
+Classes & OOP: Uses classes to encapsulate related functionalities.
+Event Listeners: Attaches event listeners to buttons and form submissions.
+DOM Manipulation: Updates modals and dropdowns dynamically based on fetched data.
+GeoJSON: Uses GeoJSON for mapping country borders.
+Layer Management: Uses Leaflet layers to manage different types of data on the map.
+Alignment with Project Requirements
+Platform: Cannot determine from JS file alone, but likely designed to be mobile-first.
+Data Presentation: Fulfills the requirement through various layers and modals.
+Third-Party APIs: Utilizes OpenWeather, Geonames, and likely more.
+Server: Cannot determine from JS file, but PHP is mentioned.
+Framework and Libraries: Uses jQuery, Leaflet, and likely a CSS framework.
+Mapping: Extensively uses Leaflet for mapping functionalities.
 
-.flexcontainer {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row-reverse;
-  align-items: center;
-  background-color: rgba(6, 24, 41, 0.7);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); }
 
-.resultsTable,
-.apiDataTable {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 30px;
-  font-size: 18px;
-  text-align: center;
-  border-radius: 12px;
-  border: 1px solid white; }
-  .resultsTable th, .resultsTable td,
-  .apiDataTable th,
-  .apiDataTable td {
-    border: 1px solid white;
-    padding: 8px;
-    text-align: center; }
-  .resultsTable th,
-  .apiDataTable th {
-    background-color: #2c213b;
-    color: white; }
+Summary of Updates
+1. Data Caching.
+2. Code Clean-up, removed 'this' extenders.
+3. Use Template Literals for HTML.
+5. Centralized AJAX Calls.
+6. Added Generic EasyButton Function to APIHandler.
+8. Commenting.
+9. Wrap await inside try/catch for robust error handling.
 
-.main {
-  box-shadow: 0 0 8px white;
-  max-width: 80%;
-  margin: 10% 0 auto;
-  padding: 30px;
-  border-radius: 8px;
-  background-color: rgba(117, 94, 117, 0.1); }
-  .main .search-button {
-    background-color: rgba(6, 24, 41, 0.7);
-    box-shadow: 0 0 3px white;
-    color: white;
-    padding: 15px 20px;
-    border: none;
-    border-radius: 5px;
-    transition: 0.3s ease-in-out;
-    cursor: pointer; }
-    .main .search-button:hover {
-      background-color: rgba(19, 76, 130, 0.7); }
 
-.match-input {
-  display: flex;
-  justify-content: space-between; }
-  .match-input input, .match-input .form-container select, .form-container .match-input select {
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid rgba(245, 245, 245, 0.171); }
 
-.modal-content {
-  background-color: #05051d;
-  color: white;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); }
+APIHandler Class
+Code Comments: More comments in the code, especially for the WeatherAPI class methods, would improve readability and maintainability.
 
-.form-container {
-  background-color: #0d0d49;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); }
+WeatherAPI Class
+The section seems to lack error handling. Consider adding a .catch() block or a try-catch statement to handle possible errors, especially for the asynchronous API call.
 
-.form-container input, .form-container select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  box-shadow: 0 0 5px white;
-  border-radius: 5px;
-  background-color: #05051d;
-  color: white; }
-  .form-container input:focus, .form-container select:focus {
-    outline: none;
-    border-color: #2c213b; }
+WikipediaAPI Class
+While console logs are useful for debugging, remember to remove or comment them out in the final version unless they are intended for production.
+While the method is relatively self-explanatory, adding comments to explain the purpose of each API call could improve readability.
 
-h1 {
-  text-shadow: 0 0 2px white; }
-  h1 span {
-    text-shadow: 0 0 2px #ff4fe8;
-    color: #2c213b;
-    font-weight: 200;
-    font-size: 2.4rem;
-    font-style: italic; }
+GeoNamesAPI and MapHandler Classes
+Error Handling: Consider adding error-handling mechanisms to the methods, especially if they interact with external APIs or elements that might not always be present.
+Code Comments: Comments to explain the purpose and functionality of methods would enhance code readability and maintainability.
+Debugging Logs: While console logs are useful for debugging, remember to remove or comment them out in the final version unless they are intended for production.
 
-.site-footer {
-  background-color: #0d0d49;
-  border-radius: 8px;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  margin-top: 10vh; }
-  .site-footer .footer-container .footer-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 15px; }
-    .site-footer .footer-container .footer-links a {
-      margin: 0 10px;
-      font-size: 24px;
-      color: #8b46b9;
-      transition: 0.3s ease-in-out; }
-      .site-footer .footer-container .footer-links a:hover {
-        color: white; }
-  .site-footer .footer-container .footer-text p {
-    font-size: 14px; }
+Fetching User Location: The fetchAndSetUserLocation method uses the Geolocation API to fetch the user's current location. It sets the view of the map based on these coordinates and adds a marker.
 
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); }
+Displaying Country Border: It also fetches and displays the country border based on a hardcoded country code ("GBR"). Consider dynamically determining the country code based on the fetched location.
 
-.modal-content {
-  background-color: #fff;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+Populating and Displaying News Modal 
+Data Validation: Before populating the modal, make sure to validate the news data. It's good to check if the data exists and is in the expected format.
+Sanitization: If user-generated content or third-party data is being inserted into the HTML, consider sanitizing it to prevent XSS attacks.
 
-.close-modal {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer; }
 
-.modal-body {
-  overflow: auto;
-  max-height: 400px;
-  /* Adjust the maximum height as needed */ }
 
-.hidden {
-  display: none; }
+Country Border Functionality Breakdown
+Method: fetchAndDisplayCountryBorder(countryCode)
+This method is responsible for fetching and displaying the border of a country specified by the countryCode parameter.
 
-/* Modal styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); }
+Steps:
+Method Invocation:
 
-.modal-content {
-  background-color: #05051d;
-  color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); }
+The method is likely invoked within the fetchAndSetUserLocation() function after successfully fetching the user's location.
+Fetching Data:
 
-.close-modal {
-  color: white;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer; }
+The method probably makes an AJAX call to a PHP script (e.g., ./php/fetch_country_border.php) to get the GeoJSON data for the country border. This part wasn't explicitly shown but is inferred based on the pattern of other methods.
 
-.modal-body {
-  overflow: auto;
-  max-height: 400px; }
+Creating GeoJSON Feature:
 
-@media screen and (max-width: 1200px) {
-  .main {
-    max-width: 95%;
-    margin: 5% 0 auto; } }
+const geoJsonFeature = {
+  type: "Feature",
+  properties: result.properties,
+  geometry: result.geometry,
+};
 
-@media screen and (max-width: 768px) {
-  .main {
-    padding: 20px; }
-  .flexcontainer {
-    flex-direction: column;
-    align-items: flex-start; }
-  .resultsTable,
-  .apiDataTable {
-    font-size: 10px; }
-  .form-container input, .form-container select,
-  .form-container select,
-  .form-container button {
-    width: 100%;
-    margin-bottom: 10px; }
-  .table-container {
-    overflow-x: auto; } }
+A GeoJSON feature is created using the result object. The result object should contain properties like properties and geometry that represent the country border.
+Adding GeoJSON Layer:
 
-@media screen and (max-width: 480px) {
-  .main {
-    margin: 3% 0 auto; }
-  h1 {
-    font-size: 1.6rem; } }
+this.geoJsonLayer = L.geoJSON(geoJsonFeature, {
+  style: borderStyle,
+}).addTo(this.map);
 
-@media screen and (max-width: 800px) {
-  .resultsTable th,
-  .apiDataTable th,
-  .resultsTable td,
-  .apiDataTable td {
-    font-size: 10px; }
-  .resultsTable th:nth-child(n+3),
-  .resultsTable td:nth-child(n+3),
-  .apiDataTable th:nth-child(n+3),
-  .apiDataTable td:nth-child(n+3) {
-    display: none; } }
+
+The GeoJSON feature is then added to the map as a layer. The borderStyle variable likely contains styling information for how the border should look.
+
+If the AJAX request fails, error details are logged to the console. Specific handling for different error types is recommended.
+
+Gazetteer Project Build Report
+
+The Gazetteer project aims to provide profiling for all countries through the presentation of demographic, climatic, geographical, and other data. It utilizes a "mobile-first" design approach and makes extensive use of third-party APIs.
+
+Main Functionalities
+Map Display: Utilizes Leaflet.js to display maps.
+Country Profiling: Fetches data for countries based on the map's central location.
+User Location: Automatically fetches and displays the user's current location.
+Layer Control: Allows users to toggle between different map layers.
+Additional Information: Fetches and displays Wikipedia info, weather details, and news related to the country.
+
+Classes and Methods
+
+APIHandler Class
+
+addButton(): Adds a generic Leaflet EasyButton to the map.
+ajaxRequest(): Handles AJAX requests centrally.
+
+WeatherAPI Class (extends APIHandler)
+
+fetchWeatherForCentralLocation(): Fetches and displays weather information.
+
+MapHandler Class (extends APIHandler)
+
+init(): Initialization function that sets up the map and buttons.
+initializeButtons(): Initializes various buttons like user location, Wikipedia info, and weather toggle.
+initializeLayerControl(): Initializes the layer control for switching between different map layers.
+
+Updates Made
+
+1. Data Caching
+Added a dataCache object in the MapHandler class to store fetched data and prevent redundant API calls.
+2. Code Clean-up
+Removed unnecessary 'this' extenders for a cleaner and more readable codebase.
+3. Use Template Literals for HTML
+Replaced traditional string concatenation with ES6 template literals for generating HTML content.
+4. Centralized AJAX Calls
+Created a centralized ajaxRequest() method in the APIHandler class to manage all AJAX calls.
+5. Added Generic EasyButton Function to APIHandler
+Introduced a generic addButton() method in the APIHandler class for adding Leaflet EasyButtons to the map.
+6. Commenting
+Added comments throughout the code for better readability and maintenance.
+7. Wrap await inside try/catch for Robust Error Handling
+Wrapped asynchronous calls inside try/catch blocks to handle errors gracefully.
+Recommendations for Future Development
+Extend Data Sources: Currently, the project uses a limited number of third-party APIs. Incorporating more data sources can make the application more informative.
+User Customization: Allowing users to customize what information they want to see could improve user experience.
+Performance Optimization: Further optimizations can be made for faster data retrieval and rendering.
+The project is well-structured, making good use of modern JavaScript features and best practices. The recent updates have significantly improved the code quality and robustness.
+
+

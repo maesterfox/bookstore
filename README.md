@@ -1,49 +1,28 @@
-bookStore :books:
-Description
-bookStore is a single-page web application designed to make it easier for users to find free books online in PDF or audiobook format. Utilizing the Google Books API, the app allows users to search for books based on different criteria and view detailed information about each book.
+# BookStore - Free Books Finder
 
-Table of Contents
-Features
-Technologies Used
-Setup and Installation
-Usage
-Contributing
-License
-Features
-Header
-The header contains the name of the app and any relevant branding to help users quickly identify the application.
+## Overview
+BookStore is a simple, one-page application enabling users to search for free books available online in PDF or Audio format. Leveraging the Google Books API, it provides instant access to a vast repository of books by author or title.
 
-Search Form
-Search By: Dropdown menu that allows users to choose whether to search by author, title, or genre.
-Search Query: Text input for the user's search query.
-Dynamic Results Table
-Populates dynamically based on the data fetched from the Google Books API.
-Displays basic information such as:
-Book cover
-Title
-Summary (limited to 100 characters with a "Read More" option)
-Authors
-Published Date
-Book Summary
-Implemented using modals that populate upon clicking the "Read More" link next to each book summary in the Dynamic Results Table.
-Shows the full summary of the selected book.
-Links to FREE Audiobook & PDF
-Provides direct links to free audiobooks and PDF versions of the book.
-Includes fan-made YouTube versions for a wider variety of choices.
-Technologies Used
-HTML5
-CSS3 (SCSS)
-JavaScript (jQuery)
-Google Books API
-Setup and Installation
-Clone the repository
-Run npm install to install dependencies
-Open index.html in your browser
-Usage
-Simply select your search criteria, input your query, and hit the "Search" button. The table below will populate with the relevant results.
+## Features
+- **Search Functionality**: Find books by author or title.
+- **Dynamic Results Display**: View search results with book covers and details.
+- **Summary Modal**: Clickable links to read more about each book.
 
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests.
+## Technologies Used
+- HTML5, CSS3, JavaScript
+- jQuery for AJAX requests
+- Google Books API
+- Font Awesome for icons
 
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+## Setup
+1. No specific setup required. Just open `index.html` in a browser.
+2. Ensure internet connectivity for API access and functionality.
+
+## Usage
+Input your search query by author or title, then press the "Search" button to display the results.
+
+## License
+This project is open source, available under the MIT License.
+
+## Contact
+Feel free to contact me at david.fox@davidfoxdev.co.uk for any questions or feedback.

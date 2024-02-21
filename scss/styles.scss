@@ -3,12 +3,11 @@ $primary-bg: #05051d;
 $primary-color: white;
 $secondary-bg: #2c213b;
 $tert: rgb(255, 88, 213);
-$font-family: 'Poppins', sans-serif;
+$font-family: "Poppins", sans-serif;
 $border-radius: 8px;
 
 // Import Font
 // @import "../node_modules/font-awesome/css/font-awesome.min.css";
-
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,300;1,700&display=swap");
 
@@ -35,7 +34,12 @@ body {
   justify-content: space-evenly;
   flex-direction: row-reverse;
   align-items: center;
-  background-color: rgba(6, 24, 41, 0.7); // Added based on your main page background color
+  background-color: rgba(
+    6,
+    24,
+    41,
+    0.7
+  ); // Added based on your main page background color
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); // Added shadow
 }
 
@@ -43,39 +47,38 @@ body {
 .resultsTable,
 .apiDataTable {
   width: 100%;
-  border-collapse: collapse;  // This ensures the borders collapse into a single border
+  border-collapse: collapse; // This ensures the borders collapse into a single border
   margin-top: 30px;
   font-size: 18px;
-  text-align: center;  // This will center the content in each cell
+  text-align: center; // This will center the content in each cell
   border-radius: 12px;
-  
+
   // Add these to style your table, rows, and columns
   border: 1px solid $primary-color;
-  th, td {
-    border: 1px solid $primary-color;  // This adds borders around your table cells
-    padding: 8px;  // Adds some padding inside each cell
-    text-align: center;  // Centers the content inside each cell
+  th,
+  td {
+    border: 1px solid $primary-color; // This adds borders around your table cells
+    padding: 8px; // Adds some padding inside each cell
+    text-align: center; // Centers the content inside each cell
   }
-  
+
   th {
     background-color: $secondary-bg;
     color: $primary-color;
   }
 }
 
-
 // Main Container
 .main {
-    
-    box-shadow: 0 0 8px white;
+  box-shadow: 0 0 8px white;
   max-width: 80%;
   margin: 10% 0 auto;
   padding: 30px;
   border-radius: $border-radius;
-  background-color: rgba(117, 94, 117, 0.1); 
+  background-color: rgba(117, 94, 117, 0.1);
 
   // Search Button
-.search-button {
+  .search-button {
     background-color: rgba(6, 24, 41, 0.7);
     box-shadow: 0 0 3px white;
     color: white;
@@ -88,7 +91,6 @@ body {
       background-color: lighten(rgba(6, 24, 41, 0.7), 20%);
     }
   }
-  
 }
 
 // Input Fields
@@ -111,223 +113,219 @@ body {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 // Form Container
 .form-container {
-    background-color: lighten($primary-bg, 10%);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  // Input Fields
-  .form-container input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    box-shadow: 0 0 5px white;
-    border-radius: 5px;
-    background-color: $primary-bg;
-    color: white;
-    &:focus {
-      outline: none;
-      border-color: $secondary-bg;
-    }
-  }
+  background-color: lighten($primary-bg, 10%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-  h1 {
-    text-shadow: 0 0 2px white;
-
-    span {
-        text-shadow: 0 0 2px rgb(255, 79, 232);
-        color: $secondary-bg;
-        font-weight: 200;
-        font-size: 2.4rem;
-        font-style: italic;
-    }
+// Input Fields
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 5px white;
+  border-radius: 5px;
+  background-color: $primary-bg;
+  color: white;
+  &:focus {
+    outline: none;
+    border-color: $secondary-bg;
   }
-  
-  // Select Fields
-  .form-container select {
-    @extend input;
-  }
-  
+}
 
-  // Footer Styles
-  .site-footer {
-    background-color: lighten($primary-bg, 10%);
-    border-radius: 8px;
-        color: white;
-    padding: 20px;
-    text-align: center;
-    margin-top: 10vh;
-  
-    .footer-container {
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 15px;
-  
-        a {
-          margin: 0 10px;
-          font-size: 24px;
-          color: rgb(139, 70, 185);
-          transition: 0.3s ease-in-out;
-  
-          &:hover {
-            color: rgb(255, 255, 255);
-          }
-        }
-      }
-  
-      .footer-text {
-        p {
-          font-size: 14px;
+h1 {
+  text-shadow: 0 0 2px white;
+
+  span {
+    text-shadow: 0 0 2px rgb(255, 79, 232);
+    color: $secondary-bg;
+    font-weight: 200;
+    font-size: 2.4rem;
+    font-style: italic;
+  }
+}
+
+// Select Fields
+.form-container select {
+  @extend input;
+}
+
+// Footer Styles
+.site-footer {
+  background-color: lighten($primary-bg, 10%);
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10vh;
+
+  .footer-container {
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+
+      a {
+        margin: 0 10px;
+        font-size: 24px;
+        color: rgb(139, 70, 185);
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: rgb(255, 255, 255);
         }
       }
     }
-  }
-  
-  /* Modal styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .modal-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-  
-  .close-modal {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .modal-body {
-    overflow: auto;
-    max-height: 400px; /* Adjust the maximum height as needed */
-  }
 
-  .hidden {
-    display: none;
+    .footer-text {
+      p {
+        font-size: 14px;
+      }
+    }
   }
-  
-  /* Modal styles */
+}
+
+/* Modal styles */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); // Overlay
-  }
-  
-  .modal-content {
-    background-color: $primary-bg;
-    color: $primary-color;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: $border-radius;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .close-modal {
-    color: $primary-color;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .modal-body {
-    overflow: auto;
-    max-height: 400px; // Adjust the maximum height as needed
-  }
-  
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal-body {
+  overflow: auto;
+  max-height: 400px; /* Adjust the maximum height as needed */
+}
+
+.hidden {
+  display: none;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); // Overlay
+}
+
+.modal-content {
+  background-color: $primary-bg;
+  color: $primary-color;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: $border-radius;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-modal {
+  color: $primary-color;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal-body {
+  overflow: auto;
+  max-height: 400px; // Adjust the maximum height as needed
+}
 
 // Existing SCSS code
 
 @media screen and (max-width: 1200px) {
-    .main {
-      max-width: 95%;
-      margin: 5% 0 auto;
-    }
+  .main {
+    max-width: 95%;
+    margin: 5% 0 auto;
   }
-  
-  @media screen and (max-width: 768px) {
-    .main {
-      padding: 20px;
-    }
-  
-    .flexcontainer {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .resultsTable,
-    .apiDataTable {
-      font-size: 10px;
-    }
-  
-    .form-container {
-      input,
-      select,
-      button {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    }
-  
-    // Add this for scrollable table
-    .table-container {
-      overflow-x: auto;
-    }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 20px;
   }
-  
-  @media screen and (max-width: 480px) {
-    .main {
-      margin: 3% 0 auto;
-    }
-  
-    h1 {
-      font-size: 1.6rem;
+
+  .flexcontainer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .resultsTable,
+  .apiDataTable {
+    font-size: 10px;
+  }
+
+  .form-container {
+    input,
+    select,
+    button {
+      width: 100%;
+      margin-bottom: 10px;
     }
   }
 
-  @media screen and (max-width: 800px) {
-    .resultsTable th,
-    .apiDataTable th,
-    .resultsTable td,
-    .apiDataTable td {
-      font-size: 10px; // or adjust as needed
-    }
-  
-    .resultsTable th:nth-child(n+3), // Hide all columns except the first two
+  // Add this for scrollable table
+  .table-container {
+    overflow-x: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    margin: 3% 0 auto;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .resultsTable th,
+  .apiDataTable th,
+  .resultsTable td,
+  .apiDataTable td {
+    font-size: 10px; // or adjust as needed
+  }
+
+  .resultsTable th:nth-child(n+3), // Hide all columns except the first two
     .resultsTable td:nth-child(n+3),
     .apiDataTable th:nth-child(n+3),
     .apiDataTable td:nth-child(n+3) {
-      display: none;
-    }
+    display: none;
   }
-  
+}
