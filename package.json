@@ -1,0 +1,15 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "BookStore is a simple, one-page application enabling users to search for free books available online in PDF or Audio format. Leveraging the Google Books API, it provides instant access to a vast repository of books by author or title.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
